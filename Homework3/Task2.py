@@ -20,3 +20,23 @@ for i in range(len(my_list)):                # перебираем список
         res.append(sum)
         i += 1
 print(res)
+
+
+from math import ceil
+
+def sum_of_pare(array):
+    """
+    get list of integer digits and return new list with
+    multiplication of elements with elements that has negative some indexes
+    :param array: list
+    :return: new list
+    """
+    accumulator = []
+    for i in range(ceil(len(array) / 2)):
+        accumulator.append(array[i] * array[-(i + 1)])
+    return accumulator
+
+
+print(sum_of_pare([2, 3, 4, 5, 6]))
+print(sum_of_pare([2, 3, 5, 6]))
+

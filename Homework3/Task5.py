@@ -16,3 +16,16 @@ def get_fibonacci(n):
         a, b = b, a - b
     return fibo_list
 print(get_fibonacci(n))
+
+
+def fib(n):
+    fib_list = [0]
+    x, y = 0, 1
+    for i in range(n):
+        x, y = y, x + y
+        fib_list.append(x)
+        fib_list.insert(0, -x if i %2 else x)
+    return fib_list
+
+fib_num = int(input('Input number: '))
+print(f'для k = {fib_num} список будет выглядеть так: {fib(fib_num)}')
